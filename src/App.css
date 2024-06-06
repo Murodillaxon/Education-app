@@ -35,3 +35,32 @@
 .ant-drawer-close:active{
   background-color: rgba(255, 255, 255, 0.238) !important
 }
+
+.ant-table-cell {
+  text-align: center;
+}
+
+.group-box {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+.group-box p {
+  margin: 8px 0;
+}
+
+.groups-container {
+  padding: 24px;
+}
+
+.create-button {
+  position: fixed;
+  top: 76px;
+  right: 16px;
+  z-index: 1000;
+}
+
+.groups-container h1 {
+  margin-bottom: 24px;
+}

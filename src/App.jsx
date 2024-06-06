@@ -5,9 +5,9 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
 import Sidebar from './components/Slidebar';
 import Teachers from './components/pages/Teachers';
-import Students from './components/pages/Students';
 import './App.css';
 import Groups from './components/pages/Groups';
+import Students from './components/pages/Students';
 
 const { Header, Content } = Layout;
 
@@ -20,8 +20,8 @@ const App = () => (
         <Content style={{ margin: '0 16px' }}>
           <Routes>
             <Route path="/groups" element={<Groups/>} /> 
-            <Route path="/teachers" component={Teachers} />
-            <Route path="/students" component={Students} />
+            <Route path="/teachers" element={<Teachers/>} />
+            <Route path="/students" element={<Students/>} />
             <Route path="/" element={<Groups />} /> 
           </Routes>
         </Content>
