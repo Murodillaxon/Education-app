@@ -27,9 +27,9 @@ const CreateGroup = ({ toggleDrawer }) => {
     const fetchTeachers = async () => {
       try {
         const response = await axios.get("http://localhost:5000/teacher/getAllTeachers");
-        setTeachers(response.data);
-        setFilteredTeachers(response.data);
-        setFilteredTechnologies(Array.from(new Set(response.data.map(teacher => teacher.Profession))));
+        setTeachers(response.data?.teachers);
+        setFilteredTeachers(response.data?.teachers);
+        setFilteredTechnologies(Array.from(new Set(response.data?.teachers.map(teacher => teacher.Profession))));
       } catch (error) {
         console.error("Error fetching teachers:", error);
         notification.error({
@@ -112,7 +112,7 @@ const CreateGroup = ({ toggleDrawer }) => {
           >
             {filteredTeachers.map((teacher) => (
               <Option key={teacher.id} value={teacher.name}>
-                {teacher.name} ({teacher.Profession})
+                {teacher.name} ({t(`${teacher.Profession}`)})
               </Option>
             ))}
           </Select>
@@ -167,7 +167,7 @@ const CreateGroup = ({ toggleDrawer }) => {
           >
             {filteredTechnologies.map((tech, index) => (
               <Option key={index} value={tech}>
-                {tech}
+                {t(`${tech}`)}
               </Option>
             ))}
           </Select>

@@ -8,6 +8,7 @@ import Teachers from './components/pages/Teachers';
 import './App.css';
 import Groups from './components/pages/Groups';
 import Students from './components/pages/Students';
+import GroupDetail from './components/pages/GroupDetail'; // Импортируйте новый компонент
 
 const { Header, Content } = Layout;
 
@@ -19,10 +20,11 @@ const App = () => (
         <Header className="site-layout-sub-header-background" style={{ padding: 0 }} />
         <Content style={{ margin: '0 16px' }}>
           <Routes>
-            <Route path="/groups" element={<Groups/>} /> 
+            <Route path="/groups" element={<Groups/>} />
+            <Route path="/group/:id" element={<GroupDetail/>} /> {/* Добавьте этот маршрут */}
             <Route path="/teachers" element={<Teachers/>} />
             <Route path="/students" element={<Students/>} />
-            <Route path="/" element={<Groups />} /> 
+            <Route path="/" element={<Groups />} />
           </Routes>
         </Content>
       </Layout>

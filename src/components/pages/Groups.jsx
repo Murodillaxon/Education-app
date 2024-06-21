@@ -39,7 +39,9 @@ const Groups = () => {
         icon={<PlusOutlined />}
         onClick={toggleDrawer}
         className="create-button"
-      >{t("Create Group")}</Button>
+      >
+        {t("Create Group")}
+      </Button>
 
       <Drawer
         placement="right"
@@ -61,6 +63,7 @@ const Groups = () => {
           {groups.map((group) => (
             <Col key={group.id} xs={24} sm={12} md={8} lg={6}>
               <GroupBox
+                id={group._id}
                 name={group.groupName}
                 teacher={group.groupTeacher}
                 pricePerDay={group.pricePerDay}
